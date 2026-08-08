@@ -3,17 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo App</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Tasks</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="shell">
-      <!-- ===== sidebar =====-->
+        
+      <!-- ===== sidebar ===== -->
       <aside class="sidebar">
         <div class="brand">
           <span class="brand-mark"></span>
@@ -62,66 +63,120 @@
         </nav>
 
         <div class="nav-section feature-categories">
-            <p class="nav-label">Categories</p>
-            <div id="categoryNav"><!-- injected --></div>
+          <p class="nav-label">Categories</p>
+          <div id="categoryNav"><!-- injected --></div>
         </div>
 
         <div class="sidebar-bottom">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-          <span id="themeLabel">Dark mode</span>
-        </button>
-      </div>
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle theme"
+          >
+            <svg
+              class="icon-sun"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+              />
+            </svg>
+            <svg
+              class="icon-moon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <span id="themeLabel">Dark mode</span>
+          </button>
+        </div>
       </aside>
 
-      <!-- ===== main =====-->
-       <main class="main">
+      <!-- ===== main ===== -->
+      <main class="main">
         <header class="main-header">
-            <div>
-                <p class="greeting" id="greeting"></p>
-                <p class="date" id="date"></p>
-            </div>
-            <div class="stats-row" id="statsRow"><!-- injected --></div>
+          <div>
+            <p class="greeting" id="greeting"></p>
+            <p class="date" id="date"></p>
+          </div>
+          <div class="stats-row" id="statsRow"><!-- injected --></div>
         </header>
 
-        <div class="progress-row feature ProgressBar">
-            <span class="counterText">0 of 0 completed</span>
-            <div class="progress-track">
-                <div class="progress-fill" id="progressFill"></div>
-            </div>
+        <div class="progress-row feature-progressBar">
+          <span id="counterText">0 of 0 completed</span>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
         </div>
 
         <form class="add-form" id="addForm">
-            <input type="text" id="taskInput" placeholder="Add a task" autocomplete="off" maxlength="200">
-            <select id="categorySelect" class="feature-categories" aria-label="category"></select>
-            <select id="prioritySelect" class="feature-priority" aria-label="priority">
-                <option value="none">No Priority</option>
-                <option value="high">High</option>
-                <option value="medium">Medium</option> 
-                <option value="low">Low</option>
-            </select>
-            <input type="date" id="dueDateInput" class="feature-dueDates" aria-label="Due date">
-            <button type="submit" class="add-btn">Add</button>
+          <input
+            type="text"
+            id="taskInput"
+            placeholder="Add a task…"
+            autocomplete="off"
+            maxlength="200"
+          />
+          <select
+            id="categorySelect"
+            class="feature-categories"
+            aria-label="Category"
+          ></select>
+          <select
+            id="prioritySelect"
+            class="feature-priority"
+            aria-label="Priority"
+          >
+            <option value="none">No priority</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <input
+            type="date"
+            id="dueDateInput"
+            class="feature-dueDates"
+            aria-label="Due date"
+          />
+          <button type="submit" class="add-btn">Add</button>
         </form>
 
         <div class="toolbar-row">
-            <input type="text" id="searchInput" class="feature-search" placeholder="Search tasks..." autocomplete="off">
-            <button class="clear-btn feature-clearCompleted"
-            id="clearCompleted">Clear Completed</button>
+          <input
+            type="text"
+            id="searchInput"
+            class="feature-search"
+            placeholder="Search tasks…"
+            autocomplete="off"
+          />
+          <button class="clear-btn feature-clearCompleted" id="clearCompleted">
+            Clear completed
+          </button>
         </div>
 
-        <ul class="task-list" id="taskList"><!-- injected --></ul>
-        
+        <ul class="task-list" id="taskList"></ul>
+
         <div class="empty-state" id="emptyState">
-            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
-          <rect x="14" y="10" width="36" height="46" rx="3"/>
-          <path d="M22 24h20M22 32h20M22 40h12"/>
-        </svg>
-        <p class="empty-title">No tasks yet</p>
-        <p class="empty-sub">Add your first task above to get started. </p>
+          <svg
+            viewBox="0 0 64 64"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <rect x="14" y="10" width="36" height="46" rx="3" />
+            <path d="M22 24h20M22 32h20M22 40h12" />
+          </svg>
+          <p class="empty-title">No tasks yet</p>
+          <p class="empty-sub">Add your first task above to get started.</p>
         </div>
-       </main>
+      </main>
     </div>
 
     <script src="script.js"></script>
