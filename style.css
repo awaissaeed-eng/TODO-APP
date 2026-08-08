@@ -33,7 +33,7 @@
   --sidebar-w: 260px;
 }
 
-[date-theme="dark"] {
+[data-theme="dark"] {
   --bg: #0f0f13;
   --sidebar-bg: #15151b;
   --surface: #1b1b22;

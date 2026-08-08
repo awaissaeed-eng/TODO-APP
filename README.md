@@ -3,6 +3,8 @@
 A polished vanilla JavaScript to-do list app built with HTML, CSS, and ES6 JavaScript.
 Tasks can be added, edited, deleted, completed, and saved with `localStorage` so they remain after refresh.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Open-brightgreen)](https://todo-app-eight-puce-75.vercel.app/)
+
 ---
 
 ## 🚀 Features

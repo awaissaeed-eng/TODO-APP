@@ -163,6 +163,9 @@ navItems.forEach(btn => {
     navItems.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     currentFilter = btn.dataset.filter;
+    if (currentFilter === 'all') {
+      currentCategory = 'all';
+    }
     renderTasks();
   });
 });
