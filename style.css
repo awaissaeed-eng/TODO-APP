@@ -673,18 +673,28 @@ body.feature-categories-off .category-badge {
     display: flex;
     gap: 4px;
   }
+  .nav-section:first-of-type {
+    order: 1;
+    flex: 0 0 100%;
+    width: 100%;
+    margin-top: 8px;
+  }
   .nav-label {
     display: none;
   }
   .nav-section.feature-categories {
+    order: 2;
     display: flex;
     overflow-x: auto;
+    flex: 0 0 100%;
+    width: 100%;
   }
   #categoryNav {
     display: flex;
     gap: 4px;
   }
   .sidebar-bottom {
+    order: 0;
     margin-top: 0;
     margin-left: auto;
   }
@@ -713,6 +723,19 @@ body.feature-categories-off .category-badge {
   }
   .main-header {
     flex-direction: column;
+    width: 100%;
+  }
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+  .stat-chip {
+    min-width: 0;
+    width: auto;
+    height: auto;
   }
 }
 
